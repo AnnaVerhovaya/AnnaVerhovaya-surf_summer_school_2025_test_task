@@ -37,8 +37,8 @@ class _PlacesListScreenState extends State<PlacesListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text(AppStrings.placesScreenAppBarTitle,
-              style: textTheme.largeTitle),
+          child:
+              Text(AppStrings.placesScreenAppBarTitle, style: textTheme.title),
         ),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(60),

@@ -112,9 +112,8 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: const Text('Карта'),
-        ),
+        title: const Text('Карта'),
+        centerTitle: true,
       ),
       body: BlocBuilder<PlaceBloc, PlaceState>(
         builder: (context, state) {

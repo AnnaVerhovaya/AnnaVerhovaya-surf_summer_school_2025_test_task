@@ -6,27 +6,9 @@ import '../../../../../uikit/uikit.dart';
 import '../../../domain/domain.dart';
 
 class PlaceCardWidget extends StatelessWidget {
-  // /// Место.
   final PlaceEntity place;
-
-  // /// Обработчик нажатия на карточку.
-  // final VoidCallback onCardTap;
-
-  // /// Обработчик нажатия на кнопку "лайк".
-  // final VoidCallback onLikeTap;
-
-  // /// Тип карточки.
-  // final PlaceCardType cardType;
-
-  /// Флаг, указывающий, добавлено ли место в избранное.
-  final bool isFavorite;
-
   const PlaceCardWidget({
     required this.place,
-    // required this.onCardTap,
-    // required this.onLikeTap,
-    // this.cardType = PlaceCardType.place,
-    this.isFavorite = false,
     super.key,
   });
 
@@ -98,7 +80,6 @@ class PlaceCardWidget extends StatelessWidget {
                         ),
                       ],
                     ),
-                    // Content
                     Padding(
                       padding: const EdgeInsets.all(16),
                       child: Column(
@@ -125,12 +106,15 @@ class PlaceCardWidget extends StatelessWidget {
                   ],
                 ),
                 Positioned(
-                  top: 8,
+                  top: 16,
                   right: 16,
                   child: GestureDetector(
                     behavior: HitTestBehavior.translucent,
                     child: Icon(
-                      isFavorite ? Icons.favorite : Icons.favorite_border,
+                      place.isFavorite == true
+                          ? Icons.favorite
+                          : Icons.favorite_border,
+                      color: colorTheme.error,
                     ),
                   ),
                 ),

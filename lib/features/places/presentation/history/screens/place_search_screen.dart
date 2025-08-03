@@ -39,10 +39,8 @@ class _PlaceSearchScreenState extends State<PlaceSearchScreen> {
     final textTheme = AppTextTheme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child:
-              Text(AppStrings.placesScreenAppBarTitle, style: textTheme.title),
-        ),
+        title: Text(AppStrings.placesScreenAppBarTitle, style: textTheme.title),
+        centerTitle: true,
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: Padding(

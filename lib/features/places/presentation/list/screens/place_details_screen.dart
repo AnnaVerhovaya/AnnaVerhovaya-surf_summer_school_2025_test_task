@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:surf_summer_school_2025_test_task/core/core.dart';
+import 'package:surf_summer_school_2025_test_task/features/favorites/presentation/favorites_bloc.dart';
 import '../../../../../uikit/uikit.dart';
 import '../../../domain/entities/place_entity.dart';
 
@@ -65,6 +68,20 @@ class PlaceDetailsScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 16),
             sliver: SliverToBoxAdapter(
               child: Divider(),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: IconButton(
+              onPressed: () {
+                final favoritesBloc = context.read<FavoritesBloc>();
+
+                favoritesBloc.add(AddedFavorites(place));
+              },
+              icon: Icon(
+                place.isFavorite == true
+                    ? Icons.favorite
+                    : Icons.favorite_border,
+              ),
             ),
           ),
         ],

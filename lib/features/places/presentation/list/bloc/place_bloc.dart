@@ -20,9 +20,7 @@ class PlaceBloc extends Bloc<PlaceEvent, PlaceState> {
   ) async {
     try {
       emit(PlaceLoading());
-
       final places = await _placeRepository.getPlaces();
-
       if (places.isEmpty) {
         emit(PlaceEmpty());
       } else {

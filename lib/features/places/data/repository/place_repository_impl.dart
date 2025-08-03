@@ -50,4 +50,22 @@ class PlaceRepositoryImpl implements PlaceRepository {
       throw Exception('Ошибка загрузки данных: $e');
     }
   }
+
+  @override
+  Future<void> addToFavorites(PlaceEntity place) async {
+    try {
+      return await localDataSource.addToFavorite(place);
+    } catch (e) {
+      throw Exception('Ошибка загрузки данных: $e');
+    }
+  }
+
+  @override
+  Future<List<PlaceEntity?>> getFavorites() async {
+    try {
+      return await localDataSource.getFavorites();
+    } catch (e) {
+      throw Exception('Ошибка загрузки данных: $e');
+    }
+  }
 }

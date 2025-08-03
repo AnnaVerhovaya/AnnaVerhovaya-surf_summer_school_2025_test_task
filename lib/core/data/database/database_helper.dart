@@ -49,7 +49,8 @@ class DatabaseHelper {
         urls TEXT,
         type TEXT,
         created_at INTEGER DEFAULT (strftime('%s', 'now')),
-        updated_at INTEGER
+        updated_at INTEGER,
+        is_favorite INTEGER DEFAULT 0
       )
     ''');
 

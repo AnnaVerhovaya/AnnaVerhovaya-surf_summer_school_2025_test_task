@@ -6,4 +6,6 @@ abstract interface class PlaceLocalDataSource {
   Future<void> cachePlaces(List<PlaceEntity> places);
   Future<List<PlaceEntity>> getCachedPlaces();
   Future<PlaceEntity?> getPlaceById(int id);
+  Future<void> addToFavorite(PlaceEntity place);
+  Future<List<PlaceEntity?>> getFavorites();
 }

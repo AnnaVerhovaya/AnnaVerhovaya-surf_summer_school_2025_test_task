@@ -62,6 +62,28 @@ class PlaceDatabase implements PlaceLocalDataSource {
     return result.isNotEmpty ? _jsonToPlace(result.first) : null;
   }
 
+  @override
+  Future<void> addToFavorite(PlaceEntity place) async {
+    final db = await _db;
+    final placeJson = _placeToJson(place.copyWith(isFavorite: true));
+    await db.insert(
+      _tableName,
+      placeJson,
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+
+  @override
+  Future<List<PlaceEntity>> getFavorites() async {
+    final db = await _db;
+    final List<Map<String, dynamic>> favoritePlaces = await db.query(
+      _tableName,
+      where: 'is_favorite = ?',
+      whereArgs: [1],
+    );
+    return favoritePlaces.map(_jsonToPlace).toList();
+  }
+
   Map<String, dynamic> _placeToJson(PlaceEntity place) {
     return {
       'id': place.id,
@@ -71,6 +93,8 @@ class PlaceDatabase implements PlaceLocalDataSource {
       'description': place.description,
       'urls': jsonEncode(place.images),
       'type': place.placeType?.name,
+      'is_favorite':
+          place.isFavorite == null ? null : (place.isFavorite! ? 1 : 0),
     };
   }
 
@@ -89,6 +113,9 @@ class PlaceDatabase implements PlaceLocalDataSource {
               (e) => e.name == json['type'],
             )
           : PlaceType.other,
+      isFavorite: json['is_favorite'] == null
+          ? null
+          : (json['is_favorite'] as int) == 1,
     );
   }
 }
