@@ -43,6 +43,6 @@ lib/
 ✔ **Оффлайн-режим** с SQLite и синхронизацией  
 
 
-https://github.com/user-attachments/assets/0f88aa47-182f-4af2-987a-be02f8820074
+
 
 
