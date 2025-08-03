@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onTap: _onTabTapped,
         items: const [
           BottomNavigationBarItem(
-            icon: SvgPictureWidget(AppSvgIcons.icListFull),
+            icon: SvgPictureWidget(AppSvgIcons.icList),
             activeIcon: SvgPictureWidget(AppSvgIcons.icListFull),
             label: "",
           ),
