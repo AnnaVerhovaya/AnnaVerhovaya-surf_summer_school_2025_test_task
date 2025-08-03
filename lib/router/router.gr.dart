@@ -43,19 +43,66 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [MapScreen]
+class MapRoute extends PageRouteInfo<void> {
+  const MapRoute({List<PageRouteInfo>? children})
+      : super(MapRoute.name, initialChildren: children);
+
+  static const String name = 'MapRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const MapScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [PlaceDetailsScreen]
-class PlaceDetailsRoute extends PageRouteInfo<void> {
-  const PlaceDetailsRoute({List<PageRouteInfo>? children})
-      : super(PlaceDetailsRoute.name, initialChildren: children);
+class PlaceDetailsRoute extends PageRouteInfo<PlaceDetailsRouteArgs> {
+  PlaceDetailsRoute({
+    Key? key,
+    required PlaceEntity place,
+    List<PageRouteInfo>? children,
+  }) : super(
+          PlaceDetailsRoute.name,
+          args: PlaceDetailsRouteArgs(key: key, place: place),
+          initialChildren: children,
+        );
 
   static const String name = 'PlaceDetailsRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const PlaceDetailsScreen();
+      final args = data.argsAs<PlaceDetailsRouteArgs>();
+      return PlaceDetailsScreen(key: args.key, place: args.place);
     },
   );
+}
+
+class PlaceDetailsRouteArgs {
+  const PlaceDetailsRouteArgs({this.key, required this.place});
+
+  final Key? key;
+
+  final PlaceEntity place;
+
+  @override
+  String toString() {
+    return 'PlaceDetailsRouteArgs{key: $key, place: $place}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! PlaceDetailsRouteArgs) return false;
+    return key == other.key && place == other.place;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ place.hashCode;
 }
 
 /// generated route for

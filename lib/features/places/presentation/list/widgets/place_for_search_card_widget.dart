@@ -6,26 +6,10 @@ import '../../../../../uikit/uikit.dart';
 import '../../../domain/domain.dart';
 
 class PlaceForSearchCardWidget extends StatelessWidget {
-  // /// Место.
   final PlaceEntity place;
-
-  // /// Обработчик нажатия на карточку.
-  // final VoidCallback onCardTap;
-
-  // /// Обработчик нажатия на кнопку "лайк".
-  // final VoidCallback onLikeTap;
-
-  // /// Тип карточки.
-  // final PlaceCardType cardType;
-
-  /// Флаг, указывающий, добавлено ли место в избранное.
   final bool isFavorite;
-
   const PlaceForSearchCardWidget({
     required this.place,
-    // required this.onCardTap,
-    // required this.onLikeTap,
-    // this.cardType = PlaceCardType.place,
     this.isFavorite = false,
     super.key,
   });
@@ -62,7 +46,9 @@ class PlaceForSearchCardWidget extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        AutoRouter.of(context).push(PlaceDetailsRoute());
+        AutoRouter.of(context).push(
+          PlaceDetailsRoute(place: place),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 32),

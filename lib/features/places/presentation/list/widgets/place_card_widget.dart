@@ -62,7 +62,9 @@ class PlaceCardWidget extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        AutoRouter.of(context).push(PlaceDetailsRoute());
+        AutoRouter.of(context).push(
+          PlaceDetailsRoute(place: place),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 32),

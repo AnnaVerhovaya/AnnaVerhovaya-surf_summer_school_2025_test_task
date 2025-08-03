@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:surf_summer_school_2025_test_task/features/favorites/presentation/screens/favorites_screen.dart';
 import 'package:surf_summer_school_2025_test_task/features/home/home_screen.dart';
+import 'package:surf_summer_school_2025_test_task/features/map/presentation/screens/map_screen.dart';
+import 'package:surf_summer_school_2025_test_task/features/places/domain/entities/place_entity.dart';
 import 'package:surf_summer_school_2025_test_task/features/places/presentation/list/screens/place_details_screen.dart';
 import 'package:surf_summer_school_2025_test_task/features/places/presentation/history/screens/place_search_screen.dart';
 import 'package:surf_summer_school_2025_test_task/features/places/presentation/list/screens/places_list_screen.dart';
