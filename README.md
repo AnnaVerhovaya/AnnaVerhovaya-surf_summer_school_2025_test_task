@@ -1,16 +1,44 @@
-# flutter_application_4
+# 🌍 Places Explorer
 
-A new Flutter project.
+<img src="https://img.shields.io/badge/Flutter-3.13.9-blue?logo=flutter" alt="Flutter Version">
+<img src="https://img.shields.io/badge/Dart-3.1.5-blue?logo=dart" alt="Dart Version">
+<img src="https://img.shields.io/badge/Architecture-Clean%20Architecture-green" alt="Architecture">
 
-## Getting Started
+Мобильное приложение для просмотра интересных мест с возможностью добавления в избранное и просмотра карты. Разработано в рамках тестового задания.
 
-This project is a starting point for a Flutter application.
+## 🏗 Архитектура
 
-A few resources to get you started if this is your first Flutter project:
+```plaintext
+lib/
+├── core/           # Общие утилиты и константы
+├── data/           # Работа с данными
+│   ├── database/   # Локальное хранилище
+│   └── http/       # Сетевые запросы
+├── domain/         # Бизнес-логика
+│   └── interfaces/ # Абстракции
+├── di/             # DI контейнер
+└── features/       # Фичи приложения
+    ├── favorites/  # Избранное
+    ├── places/     # Список мест
+    └── map/        # Карта
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🛠 Технологии
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Основные пакеты
+
+| Пакет               | Назначение                     | Версия       |
+|---------------------|--------------------------------|--------------|
+| `flutter_bloc`      | Управление состоянием          | ^9.1.1       |
+| `auto_route`        | Навигация между экранами       | ^10.1.0+1    |
+| `yandex_mapkit`     | Интерактивные карты            | ^4.1.0       |
+| `sqflite`           | Локальная база данных SQLite   | ^2.4.2       |
+| `dio`               | HTTP-клиент для API запросов   | ^5.8.0+1     |
+| `cupertino_icons`   | Иконки iOS-стиля              | ^1.0.8       |
+| `get_it`            | DI-контейнер                   | ^7.6.0       |
+
+### Ключевые особенности
+
+✔ **Чистая архитектура** с разделением на слои  
+✔ **Работа с картами** через Yandex MapKit  
+✔ **Оффлайн-режим** с SQLite и синхронизацией  
+

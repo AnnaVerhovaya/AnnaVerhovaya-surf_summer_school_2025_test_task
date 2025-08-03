@@ -44,7 +44,7 @@ dependencies:
   auto_route: ^10.1.0+1
   permission_handler: ^12.0.1
   yandex_mapkit: ^4.1.0
-  flutter_slidable: ^4.0.0
+ 
  
 
 dev_dependencies:
