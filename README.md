@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/c72cbdc4-4009-4a38-b47d-dc3bc07ccf20
+
 # 🌍 Places Explorer
 
 <img src="https://img.shields.io/badge/Flutter-3.13.9-blue?logo=flutter" alt="Flutter Version">
@@ -35,14 +39,8 @@ lib/
 | `dio`               | HTTP-клиент для API запросов   | ^5.8.0+1     |
 
 
-
 ### Ключевые особенности
 
 ✔ **Чистая архитектура** с разделением на слои  
 ✔ **Работа с картами** через Yandex MapKit  
 ✔ **Оффлайн-режим** с SQLite и синхронизацией  
-
-
-
-
-
