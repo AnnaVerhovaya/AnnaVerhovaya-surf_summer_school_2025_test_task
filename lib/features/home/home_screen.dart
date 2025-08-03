@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/core.dart';
 import '../../uikit/uikit.dart';
 import '../favorites/presentation/presentation.dart';
+import '../map/presentation/screens/map_screen.dart';
 import '../places/presentation/presentation.dart';
 import '../settings/presentation/screens/settings_screen.dart'
     show SettingsScreen;
@@ -20,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _pages = [
     const PlacesListScreen(),
+    MapScreen(),
     const FavoritesScreen(),
     const SettingsScreen(),
   ];
@@ -41,6 +43,11 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: SvgPictureWidget(AppSvgIcons.icListFull),
             activeIcon: SvgPictureWidget(AppSvgIcons.icListFull),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPictureWidget(AppSvgIcons.icMap),
+            activeIcon: SvgPictureWidget(AppSvgIcons.icMapFull),
             label: "",
           ),
           BottomNavigationBarItem(

@@ -27,7 +27,6 @@ class _PlacesListScreenState extends State<PlacesListScreen> {
 
   @override
   void dispose() {
-    placeBloc.close();
     _searchController.dispose();
     super.dispose();
   }

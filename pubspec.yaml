@@ -42,6 +42,9 @@ dependencies:
   cached_network_image: 3.4.1
   flutter_svg: ^2.2.0
   auto_route: ^10.1.0+1
+  permission_handler: ^12.0.1
+  yandex_mapkit: ^4.1.0
+ 
 
 dev_dependencies:
   flutter_test:
